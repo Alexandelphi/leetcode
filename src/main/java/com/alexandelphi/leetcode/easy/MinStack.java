@@ -1,4 +1,4 @@
-package com.alexandelphi.leetcode;
+package com.alexandelphi.leetcode.easy;
 
 class MinStack {
     private Node head;
