@@ -14,10 +14,7 @@ class ReverseString {
         }
         return new String(temp);
     }
-}
 
-
-class Main {
     public static void main(String[] args) {
         ReverseString reverse = new ReverseString();
 
