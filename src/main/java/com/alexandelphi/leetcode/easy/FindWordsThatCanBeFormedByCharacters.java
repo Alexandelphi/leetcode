@@ -1,5 +1,7 @@
 package com.alexandelphi.leetcode.easy;
 
+import java.util.Arrays;
+
 public class FindWordsThatCanBeFormedByCharacters {
   public int countCharacters(String[] words, String chars) {
     int[] charTable = new int[26];
