@@ -1,7 +1,9 @@
 package com.alexandelphi.leetcode.medium;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 public class MaximumLevelSumOfABinaryTree {
 
@@ -56,5 +58,39 @@ public class MaximumLevelSumOfABinaryTree {
     maxDepthLevel = Math.max(maxDepthLevel, level);
     traverseDFS(node.left, level + 1);
     traverseDFS(node.right, level + 1);
+  }
+
+  // my BFS solution
+  //  Runtime: 9 ms, faster than 83.75% of Java online submissions for Maximum Level Sum of a Binary Tree.
+  //  Memory Usage: 42.3 MB, less than 100.00% of Java online submissions for Maximum Level Sum of a Binary Tree.
+  public int maxLevelSumV3(TreeNode root) {
+    if (root == null) {
+      return 0;
+    }
+    int[] cache = new int[(int) Math.pow(10, 4) + 1];
+    Queue<TreeNode> q = new LinkedList<>();
+    q.add(root);
+    int depthLevel = 0;
+    while (!q.isEmpty()) {
+      depthLevel++;
+      int size = q.size();
+      for (int i = 0; i < size; i++) {
+        TreeNode node = q.poll();
+        cache[depthLevel] += node.val;
+        if (node.left != null) {
+          q.add(node.left);
+        }
+        if (node.right != null) {
+          q.add(node.right);
+        }
+      }
+    }
+    int maxLevelSum = 0;
+    for (int i = 0; i <= depthLevel; i++) {
+      if (cache[i] > cache[maxLevelSum]) {
+        maxLevelSum = i;
+      }
+    }
+    return maxLevelSum;
   }
 }
