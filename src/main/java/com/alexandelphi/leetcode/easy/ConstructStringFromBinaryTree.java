@@ -22,8 +22,8 @@ public class ConstructStringFromBinaryTree {
       sb.append(")");
     }
     if (node.right != null) {
-      if (node.left == null) { // here is the moment which can be a little unclear
-        sb.append("()");       //
+      if (node.left == null) { // here is the moment which can be a little unclear ...
+        sb.append("()");       // if there is a right child but no left child, we still need to record '()' instead of empty string.
       }
       sb.append("(");
       dfs(node.right, sb);
