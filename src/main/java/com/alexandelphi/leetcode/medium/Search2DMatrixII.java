@@ -6,7 +6,7 @@ package com.alexandelphi.leetcode.medium;
 // my straightforward solution with BinarySearch
 // Can I do better then that? I guess yes, but I need to think a little
 
-public class SearchA2DMatrixII {
+public class Search2DMatrixII {
   public boolean searchMatrix(int[][] matrix, int target) {
     for (int[] arr : matrix) {
       if (fastCheck(arr, target)) {
