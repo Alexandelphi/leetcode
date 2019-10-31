@@ -2,8 +2,6 @@ package com.alexandelphi.leetcode.easy;
 
 public class MaximumAverageSubarrayI {
 
-
-
   // Runtime: 335 ms, faster than 11.37% of Java online submissions for Maximum Average Subarray I.
   // Memory Usage: 41.7 MB, less than 76.92% of Java online submissions for Maximum Average Subarray I.
   // my straightforward solution, it's gonna be optimised
