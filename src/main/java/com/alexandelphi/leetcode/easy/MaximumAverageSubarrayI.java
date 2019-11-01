@@ -17,4 +17,21 @@ public class MaximumAverageSubarrayI {
     }
     return max;
   }
+
+  // Runtime: 3 ms, faster than 97.67% of Java online submissions for Maximum Average Subarray I.
+  // Memory Usage: 40.8 MB, less than 92.31% of Java online submissions for Maximum Average Subarray I.
+  // Improved version by using Sliding Window technique
+
+  public double findMaxAverageV2(int[] nums, int k) {
+    int sum = 0;
+    for (int i = 0; i < k; i++) {
+      sum += nums[i];
+    }
+    int res = sum;
+    for (int i = k; i < nums.length; i++) {
+      sum = sum + nums[i] - nums[i - k];
+      res = Math.max(res, sum);
+    }
+    return (double) res / k;
+  }
 }
