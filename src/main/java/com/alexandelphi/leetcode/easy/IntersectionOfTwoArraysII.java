@@ -1,19 +1,20 @@
 package com.alexandelphi.leetcode.easy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
-public class IntersectionOfTwoArrays {
-  // Runtime: 6 ms, faster than 13.77% of Java online submissions for Intersection of Two Arrays.
-  // Memory Usage: 37.9 MB, less than 40.54% of Java online submissions for Intersection of Two Arrays.
+public class IntersectionOfTwoArraysII {
+
+  // Runtime: 6 ms, faster than 15.01% of Java online submissions for Intersection of Two Arrays II.
+  // Memory Usage: 37.9 MB, less than 41.94% of Java online submissions for Intersection of Two Arrays II.
   // my straightforward solution
-  public int[] intersection(int[] nums1, int[] nums2) {
+  public int[] intersect(int[] nums1, int[] nums2) {
     Arrays.sort(nums1);
     Arrays.sort(nums2);
     int i = 0;
     int j = 0;
-    Set<Integer> list = new HashSet<>();
+    List<Integer> list = new ArrayList<>();
     while (i < nums1.length && j < nums2.length) {
       if (nums1[i] == nums2[j]) {
         list.add(nums1[i]);
