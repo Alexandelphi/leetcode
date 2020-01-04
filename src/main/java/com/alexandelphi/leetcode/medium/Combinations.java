@@ -18,6 +18,10 @@ public class Combinations {
     if (list.size() == k) {
       result.add(new ArrayList<>(list));
     }
+    // theoretically if use "i <= n && list.size() < k" it should improve the performance,
+    // because we will remove redundant backtrack steps, but
+    // the result is "Runtime: 34 ms, faster than 17.24% and Memory Usage: 41.9 MB, less than 8.70%"
+    // when I tried ... as for now, I left it as is and it will be investigated
     for (int i = index; i <= n; i++) {
       list.add(i);
       helper(result, list, n, k, i + 1);
