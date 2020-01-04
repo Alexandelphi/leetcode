@@ -50,4 +50,9 @@ public class CoinChange {
     }
     return memo[rem - 1];
   }
+
+
+  public static void main(String[] args) {
+    System.out.println(new CoinChange().coinChangeRecursion(new int[]{1,2,5}, 11));
+  }
 }
