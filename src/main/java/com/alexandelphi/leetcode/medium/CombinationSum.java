@@ -22,6 +22,7 @@ public class CombinationSum {
     for (int i = index; i < candidates.length && sum < target; i++) {
       int value = candidates[i];
       list.add(value);
+      // Note: we have to pass "i" as "index" to next backtrack call in order to remove duplicates!!!
       backtrack(candidates, target, result, list, i, sum + value);
       list.remove(list.size() - 1);
     }
