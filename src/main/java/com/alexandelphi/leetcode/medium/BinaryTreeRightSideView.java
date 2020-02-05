@@ -8,29 +8,27 @@ import java.util.Queue;
 
 public class BinaryTreeRightSideView {
 
-  // dfs version, not finished yet
-  // it will be updated soon
+  // Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Right Side View.
+  // Memory Usage: 38.1 MB, less than 5.88% of Java online submissions for Binary Tree Right Side View.
+  // dfs version
   public List<Integer> rightSideView(TreeNode root) {
     if (root == null) {
       return Collections.emptyList();
     }
     List<Integer> result = new ArrayList<>();
-    dfs(root, result, 1);
+    dfs(root, result, 0);
     return result;
   }
 
-  private int dfs(TreeNode node, List<Integer> list, int depth) {
+  private void dfs(TreeNode node, List<Integer> list, int depth) {
     if (node == null) {
-      return depth;
+      return;
     }
-    list.add(node.val);
-    int left = 0, right = 0;
-    if (node.right != null) {
-      left = dfs(node.right, list, depth + 1);
-    } else if (node.left != null) {
-      right = dfs(node.left, list, depth + 1);
+    if (list.size() == depth) {
+      list.add(node.val);
     }
-    return Math.max(depth, Math.max(left, right));
+    dfs(node.right, list, depth + 1);
+    dfs(node.left, list, depth + 1);
   }
 
 
