@@ -31,4 +31,27 @@ public class HouseRobberII {
     }
     return dp[dp.length - 1 - end];
   }
+
+
+  // Runtime: 0 ms, faster than 100.00% of Java online submissions for House Robber II.
+  // Memory Usage: 37.3 MB, less than 6.67% of Java online submissions for House Robber II.
+  // my attempt to improve space complexity, I'm not sure but it can be LeetCode issue ...
+  // Time O(n), Space O(1) complexity
+  public int robV2(int[] nums) {
+    int n = nums.length;
+    if (n == 0) return 0;
+    if (n == 1) return nums[0];
+    return Math.max(rob(nums, 1, n - 1), rob(nums, 0, n - 2));
+  }
+
+  private int robV2(int[] nums, int start, int end) {
+    int x1 = 0, x2 = 0;
+    for (int i = start; i <= end; i++) {
+      int res = Math.max(x1 + nums[i], x2);
+      x1 = x2;
+      x2 = res;
+    }
+    return x2;
+  }
 }
+
