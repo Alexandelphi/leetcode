@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FindAllNumbersDisappearedInArray {
-
+  // Runtime: 5 ms, faster than 88.93% of Java online submissions for Find All Numbers Disappeared in an Array.
+  // Memory Usage: 48.2 MB, less than 37.74% of Java online submissions for Find All Numbers Disappeared in an Array.
   public List<Integer> findDisappearedNumbers(int[] nums) {
     List<Integer> result = new ArrayList<>();
     for (int i = 0; i < nums.length; i++) {
